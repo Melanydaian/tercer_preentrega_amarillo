@@ -1,0 +1,16 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+    <form action="{% url 'ServForm' %}" method="post">
+        {% csrf_token %}
+        <div class="agregaservicios">
+            <h2>Agregue el servicio nuevo</h2>
+            <br>
+            {{ serv_Form.as_p }}
+            <br>
+            <button type="submit">Guardar</button>
+        </div>
+    </form>
+
+{% endblock contenidoQueCambia %}

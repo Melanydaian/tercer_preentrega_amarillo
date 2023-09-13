@@ -1,0 +1,24 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+<form action="{% url 'empleadosForm' %}" method="post"> {% csrf_token %} 
+        {% csrf_token %}
+        <div class="tituloCrear">
+            <h2>Agregue un nuevo empleado</h2>
+            <br>
+            {{ emplForm.nombre.label_tag }}
+            {{ emplForm.nombre }}
+            <br>
+            {{ emplForm.apellido.label_tag }}
+            {{ emplForm.apellido }}
+            <br>
+            {{ emplForm.cuil.label_tag }}
+            {{ emplForm.cuil }}
+            <br>
+            {{ emplForm.fecha_ingreso.label_tag }}
+            {{ emplForm.fecha_ingreso }}
+            <br>
+            <button type="submit">Guardar</button>
+        </div>
+    </form>
+{% endblock contenidoQueCambia %}

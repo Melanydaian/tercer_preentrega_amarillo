@@ -1,0 +1,32 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+<h2>Buscar un Empleado</h2>
+
+{% if empleado %}
+    <h2>Empleados encontrados</h2>
+    <ul>
+        {% for emp in empleado %}
+            <li>
+                <strong>Nombre:</strong> {{ emp.nombre }}<br>
+                <strong>Apellido:</strong> {{ emp.apellido }}<br>
+                <strong>CUIL:</strong> {{ emp.cuil }}<br>
+                <strong>Fecha de Ingreso:</strong> {{ emp.fecha_ingreso }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+<form action="{% url 'buscarempleado' %}" method="get"> 
+    <div class="buscarempleado">
+        <h4> Ingrese el nombre de un empleado para ver sus datos </h4>
+        
+        <br>
+        <p> Nombre: <input type="text" name="buscar_nombre"> </p>
+        <br>
+
+        <button type="submit"> Buscar </button>
+    </div>
+</form>
+
+{% endblock contenidoQueCambia %}

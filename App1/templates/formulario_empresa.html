@@ -1,0 +1,16 @@
+{% extends 'padre.html' %}
+
+{% block contenidoQueCambia %}
+
+    <form action="{% url 'EmpresaForm' %}" method="post">
+        {% csrf_token %}
+        <div class="agregaempresa">
+            <h2>Ingrese los datos de la empresa</h2>
+            <br>
+            {{ formulario_empresa.as_p }}
+            <br>
+            <button type="submit">Guardar</button>
+        </div>
+    </form>
+
+{% endblock contenidoQueCambia %}
