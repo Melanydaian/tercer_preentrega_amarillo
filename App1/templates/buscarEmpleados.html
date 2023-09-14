@@ -1,22 +1,27 @@
 {% extends 'padre.html' %}
 
-
 {% block contenidoQueCambia %}
+    <h2>Buscar un Empleado</h2>
 
-
-    <form action="{% url 'buscarempleado' %}" method="get"> 
-
+    <form action="{% url 'buscarempleado' %}" method="get">
         <div class="buscarempleado">
-            <h4> Encuentre un empleado </h4>
-        
-        <br>
-        <p> Nombre: <input type="text" name="buscar_nombre"> </p>
-        <br>
+            <h4>Buscar un empleado</h4>
 
-        <button type="submit"> Buscar </button>
-         </div>
+            <br>
+            <p>Nombre: <input type="text" name="buscar_nombre"></p>
+            <br>
+
+            <button type="submit">Buscar</button>
+        </div>
     </form>
 
+    {% if empleado %}
+    <h2>Datos del Empleado</h2>
 
-   
+    <p>Nombre: {{ empleado.nombre }}</p>
+    <p>Apellido: {{ empleado.apellido }}</p>
+    <p>Cuil: {{ empleado.cuil }}</p>
+    <p>Ingreso: {{ empleado.fecha_ingreso }}</p>
+    <a href="{% url 'buscarempleado' %}">Buscar Otro Empleado</a>
+    {% endif %}
 {% endblock contenidoQueCambia %}

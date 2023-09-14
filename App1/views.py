@@ -24,8 +24,6 @@ def servicios(request):
     print(lista_servicios)  
     return render(request, "listaServicios.html", {"lista_servicios": lista_servicios})
 
-
-
 def empresaForm(request):
     if request.method == "POST":
         formulario_empresa = EmpresaFormulario(request.POST)
@@ -37,8 +35,6 @@ def empresaForm(request):
     else:
         formulario_empresa = EmpresaFormulario()
         return render(request, "formulario_empresa.html", {"formulario_empresa": formulario_empresa})
-
-
 
 def empleadosForm(request):
     if request.method == "POST":
@@ -58,7 +54,7 @@ def ServForm(request):
         serv_form = ServiciosFormulario(request.POST)
         if serv_form.is_valid():
             data = serv_form.cleaned_data
-            servicio = Servicios(nombre_servicio=data["nombre_servicio"])  # Usar el nombre correcto del campo
+            servicio = Servicios(nombre_servicio=data["nombre_servicio"])  
             servicio.save()
             return render(request, "inicio.html")
     else:
@@ -67,7 +63,7 @@ def ServForm(request):
 
 
 def buscarEmpleados(request):
-    nombre = request.GET.get('buscar_nombre', '')  # Obtén el parámetro de búsqueda o una cadena vacía si no se proporciona
+    nombre = request.GET.get('buscar_nombre', '')  
     empleados = Empleados.objects.filter(nombre__icontains=nombre)
     if nombre:
         return render(request, "encontrarempleados.html", {"empleado": empleados})
@@ -76,8 +72,7 @@ def buscarEmpleados(request):
 
 def buscar(request):
     empleados = Empleados.objects.all()
-    nombre = request.GET.get('busca_nombre', '')  # Obtén el parámetro de búsqueda o una cadena vacía si no se proporciona
-
+    nombre = request.GET.get('busca_nombre', '')  
     if nombre:
         empleado = empleados.filter(nombre__icontains=nombre)
     else:

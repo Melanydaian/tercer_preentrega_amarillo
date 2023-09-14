@@ -2,7 +2,7 @@
 
 {% block contenidoQueCambia %}
 
-    <form action="{% url 'EmpresaForm' %}" method="post">
+    <form action="{% url 'empresaForm' %}" method="post">
         {% csrf_token %}
         <div class="agregaempresa">
             <h2>Ingrese los datos de la empresa</h2>
