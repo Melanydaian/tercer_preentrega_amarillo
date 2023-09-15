@@ -2,15 +2,40 @@
 
 {% block contenidoQueCambia %}
 
-    <form action="{% url 'empresaForm' %}" method="post">
-        {% csrf_token %}
-        <div class="agregaempresa">
-            <h2>Ingrese los datos de la empresa</h2>
-            <br>
-            {{ formulario_empresa.as_p }}
-            <br>
-            <button type="submit">Guardar</button>
-        </div>
-    </form>
+<style>
+
+    .agregaempresa {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+
+    input[type="text"], input[type="number"], input[type="text"] {
+        width: 100%; 
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    button[type="submit"] {
+        background-color: blue;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+
+<form action="{% url 'empresaForm' %}" method="post">
+    {% csrf_token %}
+    <div class="agregaempresa">
+        <h2>Ingrese los datos de la empresa</h2>
+        <br>
+        {{ formulario_empresa.as_p }}
+        <br>
+        <button type="submit">Guardar</button>
+    </div>
+</form>
 
 {% endblock contenidoQueCambia %}

@@ -11,18 +11,9 @@ def inicio(request):
 def iniciar_sesion(request):
     return render(request, 'iniciar_sesion.html')
 
-def empresa(request):
-    empresa_seguridad=Empresa.objects.all()
-    return render(request, "empresa_seguridad.html", {"empresa_seguridad":empresa_seguridad})
-
 def empleados(request):
     listaEmpleados=Empleados.objects.all()
     return render(request, "listaEmpleados.html", {"listaEmpleados":listaEmpleados})
-
-def servicios(request):
-    lista_servicios = Servicios.objects.all()
-    print(lista_servicios)  
-    return render(request, "listaServicios.html", {"lista_servicios": lista_servicios})
 
 def empresaForm(request):
     if request.method == "POST":

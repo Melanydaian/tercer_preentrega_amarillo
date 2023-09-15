@@ -8,7 +8,7 @@ class EmpresaFormulario(forms.Form):
     
 class EmpleadoFormulario(forms.Form):
     nombre = forms.CharField(max_length=70, label="Nombre")
-    apellido = forms.CharField(max_length=70, label="Nombre")
+    apellido = forms.CharField(max_length=70, label="Apellido")
     cuil = forms.IntegerField(label="CUIL")
     fecha_ingreso = forms.DateField(label="Fecha de Ingreso")
    

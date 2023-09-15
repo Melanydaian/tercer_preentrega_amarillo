@@ -1,25 +1,21 @@
 {% extends 'padre.html' %}
-
+</style>
 
 {% block contenidoQueCambia %}
 
-    <br>
-    
-    <div class="lista_empleado">
-    <h4> Lista de empleados </h4>
-    <br>
-   </div>
-    <div class="listas">
 
-     {% for empleado in listaEmpleados %}
+    <div class="container">
 
-        <ul >
-
-            <li > {{empleado.nombre}} --{{empleado.apellido}} -- {{empleado.cuil}}  </li>
-
+        <div class="lista_empleado">
+           
+            <h4>Empleados</h4>
+        </div>
+        <ul class="list-group">
+            {% for empleado in listaEmpleados %}
+            <li class="list-group-item">
+                {{empleado.nombre}} {{empleado.apellido}} - {{empleado.cuil}}
+            </li>
+            {% endfor %}
         </ul>
-        
-    {% endfor %}
     </div>
-    
 {% endblock contenidoQueCambia %}

@@ -2,7 +2,7 @@
     <div class="container">
         <a class="navbar-brand {% if request.path == '/' %}active{% endif %}" href="{% url 'inicio' %}">Inicio</a>
         <a class="navbar-brand {% if request.path == '/empresaForm/' %}active{% endif %}" href="{% url 'empresaForm' %}">Empresa</a>
-        <a class="navbar-brand {% if request.path == '/empleados/' %}active{% endif %}" href="{% url 'empleados' %}">Empleados</a>
+        <a class="navbar-brand {% if request.path == '/empleadosForm/' %}active{% endif %}" href="{% url 'empleadosForm' %}">Empleados</a>
         <a class="navbar-brand {% if request.path == '/ServForm/' %}active{% endif %}" href="{% url 'ServForm' %}">Servicios</a>
         <a class="btn btn-primary" href="{% url 'iniciar_sesion' %}">Iniciar sesión</a>
     </div>
