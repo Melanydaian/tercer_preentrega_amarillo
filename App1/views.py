@@ -50,8 +50,8 @@ def ServForm(request):
             return render(request, "inicio.html")
     else:
         serv_form = ServiciosFormulario()
-        return render(request, "serviciosForm.html", {"serv_Form": serv_form})
 
+    return render(request, "serviciosForm.html", {"serv_Form": serv_form})
 
 def buscarEmpleados(request):
     nombre = request.GET.get('buscar_nombre', '')  

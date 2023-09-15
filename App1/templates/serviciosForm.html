@@ -1,16 +1,52 @@
 {% extends 'padre.html' %}
 
 {% block contenidoQueCambia %}
+<style>
+    .agregaservicios {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-    <form action="{% url 'ServForm' %}" method="post">
-        {% csrf_token %}
-        <div class="agregaservicios">
-            <h2>Agregue el servicio nuevo</h2>
-            <br>
-            {{ serv_Form.as_p }}
-            <br>
-            <button type="submit">Guardar</button>
-        </div>
-    </form>
 
+    button[type="submit"] {
+        background-color: blue;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    label {
+        margin-top: 10px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="text"] {
+        width: 100%;
+        padding: 5px;
+    }
+</style>
+
+<form action="{% url 'ServForm' %}" method="post">
+    {% csrf_token %}
+    <div class="agregaservicios">
+        <h2>Agregue el servicio nuevo</h2>
+        <label for="nombre">Nombre del Servicio:</label>
+        <input type="text" id="nombre" name="nombre_servicio" required>
+        <label for="cantidad_empleados">Cantidad de empleados:</label>
+        <input type="number" id="cantidad_empleados" name="cantidad_empleados" required>
+        <button type="submit">Guardar</button>
+    </div>
+</form>
 {% endblock contenidoQueCambia %}

@@ -15,4 +15,4 @@ class EmpleadoFormulario(forms.Form):
 
 class ServiciosFormulario(forms.Form):
     nombre_servicio = forms.CharField(max_length=40, label="Servicio")
-
+    cantidad_empleados = forms.IntegerField(label="Cantidad de empleados")
